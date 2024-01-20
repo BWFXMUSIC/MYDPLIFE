@@ -8,28 +8,26 @@ from AshishX.utils.formatters import time_to_seconds
 
 def track_markup(_, videoid, user_id, channel, fplay):
     buttons = [
-        [
+       [
             InlineKeyboardButton(
-                text=_["P_B_1"],
-                callback_data=f"MusicStream {videoid}|{user_id}|a|{channel}|{fplay}",
+                text="🌼 ᴘʟᴀʏʟɪsᴛs",
+                callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(
-                text=_["P_B_2"],
-                callback_data=f"MusicStream {videoid}|{user_id}|v|{channel}|{fplay}",
-            )
+                text="✨ 𝐎ωиєя ⏎", url=f"https://t.me/L2R_KING0"
+            ),
+        ],
+        [
+           InlineKeyboardButton(
+                text="💮︎ ᴄᴘᴀɴɴᴇʟ", url=config.SUPPORT_CHANNEL,
+            ),
+           InlineKeyboardButton(
+                text="⛩️ Gʀᴏᴜᴘꨄ︎ ⛩️", url=config.SUPPORT_GROUP,
+            ),
         ],
         [
             InlineKeyboardButton(
-                text="💌 𝐎𝐖𝐍𝐄𝐑⏎", url=f"tg://openmessage?user_id={OWNER_ID}",
-            ),
-            InlineKeyboardButton(
-                text="📝 𝐒𝐮𝐩𝐩𝐨𝐫𝐭", url=SUPPORT_CHAT,
-            )
-        ],
-        [
-            InlineKeyboardButton(
-                text=_["CLOSE_BUTTON"],
-                callback_data=f"forceclose {videoid}|{user_id}",
+                text="", callback_data="close"
             )
         ],
     ]
@@ -68,22 +66,30 @@ def stream_markup_timer(_, chat_id, played, dur):
             InlineKeyboardButton(text="❤️", callback_data=f"ADMIN Replay|{chat_id}"),
             InlineKeyboardButton(text="🍃", callback_data=f"ADMIN Skip|{chat_id}"),
             InlineKeyboardButton(text="🌦", callback_data=f"ADMIN Stop|{chat_id}"),
+                    
         ],
-        [
+       [
             InlineKeyboardButton(
-                text=f"{played} {bar} {dur}",
-                callback_data="GetTimer",
-            )
-            ],
-        [
-            InlineKeyboardButton(
-                text="💌 𝐎𝐖𝐍𝐄𝐑⏎", url=f"tg://openmessage?user_id={OWNER_ID}",
+                text="🌼 ᴘʟᴀʏʟɪsᴛs",
+                callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(
-                text="📝 𝐒𝐮𝐩𝐩𝐨𝐫𝐭", url=SUPPORT_CHAT,
+                text="✨ 𝐎ωиєя ⏎", url=f"https://t.me/L2R_KING0"
+            ),
+        ],
+        [
+           InlineKeyboardButton(
+                text="💮︎ ᴄᴘᴀɴɴᴇʟ", url=config.SUPPORT_CHANNEL,
+            ),
+           InlineKeyboardButton(
+                text="⛩️ Gʀᴏᴜᴘꨄ︎ ⛩️", url=config.SUPPORT_GROUP,
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="", callback_data="close"
             )
         ],
-        [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
     return buttons
 
@@ -97,15 +103,30 @@ def stream_markup(_, chat_id):
             InlineKeyboardButton(text="🍃", callback_data=f"ADMIN Skip|{chat_id}"),
             InlineKeyboardButton(text="🌦", callback_data=f"ADMIN Stop|{chat_id}")
             ],
+    
+        [
         [
             InlineKeyboardButton(
-                text="💌 𝐎𝐖𝐍𝐄𝐑⏎", url=f"tg://openmessage?user_id={OWNER_ID}",
+                text="🌼 ᴘʟᴀʏʟɪsᴛs",
+                callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(
-                text="📝 𝐒𝐮𝐩𝐩𝐨𝐫𝐭", url=SUPPORT_CHAT,
+                text="✨ 𝐎ωиєя ⏎", url=f"https://t.me/L2R_KING0"
+            ),
+        ],
+        [
+           InlineKeyboardButton(
+                text="💮︎ ᴄᴘᴀɴɴᴇʟ", url=config.SUPPORT_CHANNEL,
+            ),
+           InlineKeyboardButton(
+                text="⛩️ Gʀᴏᴜᴘꨄ︎ ⛩️", url=config.SUPPORT_GROUP,
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="", callback_data="close"
             )
         ],
-        [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
     return buttons
 
